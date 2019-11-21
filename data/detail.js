@@ -6,8 +6,8 @@
     const axiosRetry = require('axios-retry');
     const fs = require("fs")
     const jsonPath = require("jsonpath")
-    const cookie = fs.readFileSync("cookie")
-
+    const cookie = fs.readFileSync("cookie", 'utf8')
+    
     axiosRetry(axios, { retries: 1000, retryDelay: () => 0 });
     const data = JSON.parse(fs.readFileSync("./data.json"))
     const wids = jsonPath.query(data, "$..wid")

@@ -2,7 +2,8 @@
 (async () => {
     const axios = require("axios").default
     const fs = require("fs")
-    const cookie = fs.readFileSync("cookie")    
+    const cookie = fs.readFileSync("cookie", 'utf8')
+    
     let days = [...Array(4).keys()].map(it => `Day${it + 1}`)
     let halls = ["w12", "w34", "s12", "s34"]
     let obj = {}
