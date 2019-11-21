@@ -45,5 +45,6 @@
     
     fs.writeFileSync("./detail.json", JSON.stringify(list));
 
+    bar.stop();
 
 })();

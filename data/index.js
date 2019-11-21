@@ -24,5 +24,6 @@
     }
     
     fs.writeFileSync("./data.json", JSON.stringify(obj));
-    
+    bar.stop();
+
 })()
