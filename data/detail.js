@@ -1,14 +1,14 @@
 (async() => {
-    const pLimit = require('p-limit');
-    const cliProgress = require('cli-progress');
+    const pLimit = require('p-limit')
+    const cliProgress = require('cli-progress')
     const limit = pLimit(10);
     const axios = require("axios").default
-    const axiosRetry = require('axios-retry');
+    const axiosRetry = require('axios-retry')
     const fs = require("fs")
     const jsonPath = require("jsonpath")
-    const cookie = fs.readFileSync("cookie", 'utf8')
+    const cookie = fs.readFileSync("cookie", 'utf8').trim()
     
-    axiosRetry(axios, { retries: 1000, retryDelay: () => 0 });
+    axiosRetry(axios, { retries: 1000, retryDelay: () => 0 })
     const data = JSON.parse(fs.readFileSync("./data.json"))
     const wids = jsonPath.query(data, "$..wid")
 

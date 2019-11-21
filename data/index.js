@@ -2,9 +2,10 @@
 (async () => {
     const axios = require("axios").default
     const fs = require("fs")
-    const cliProgress = require('cli-progress');
-    const bar = new cliProgress.SingleBar({}, cliProgress.Presets.rect);
-    const cookie = fs.readFileSync("cookie", 'utf8')
+    const cliProgress = require('cli-progress')
+    const bar = new cliProgress.SingleBar({}, cliProgress.Presets.rect)
+    const cookie = fs.readFileSync("cookie", 'utf8').trim()
+
     let days = [...Array(4).keys()].map(it => `Day${it + 1}`)
     let halls = ["w12", "w34", "s12", "s34"]
     bar.start(days.length * halls.length, 0);
