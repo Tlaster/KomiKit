@@ -23,6 +23,6 @@
         obj[day] = dobj
     }
     
-    fs.writeFileSync("./data2.json", JSON.stringify(obj));
+    fs.writeFileSync("./data.json", JSON.stringify(obj));
     
 })()
